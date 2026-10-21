@@ -1,0 +1,24 @@
+# 本机配置与凭据
+config/kb_local.yaml
+kb_local.yaml
+*.env
+.env*
+secrets*
+*secret*
+*.pem
+*.key
+# 抓取数据 / 对标库
+对标库/
+xhs-tools/
+tmp_lib/
+data/
+downloads/
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+对标库.csv
+对标拆解库.csv
+*.xlsx
+__pycache__/
+*.pyc

@@ -1,0 +1,38 @@
+# 对标库标准结构（沿用原案例「对标与热点拆解」表 + 拆解模板 A2 关键字段）
+# 新建库时按这里建列；接已有库时，用 kb_local.yaml 的 field_map 把这些标准字段映射到对方的列。
+# 映射不到的标准字段，会自动按「字段：值」并进 正文字段（content_field）里，不丢信息。
+version: 1
+id_field: 记录ID          # 去重键；值形如 BM-XHS-<作品ID>
+id_prefix: BM-XHS-
+content_field: 内容
+core_fields:              # = 「对标与热点拆解」表的列，顺序原样
+  - {name: 记录ID, type: text}
+  - {name: 标题, type: text}
+  - {name: 内容, type: text, note: 完整拆解（A1–A4 + 可借鉴点 + 图片路径/URL）}
+  - {name: 链接, type: text}
+  - {name: 行业, type: text}
+  - {name: 类型, type: text, default: 对标帖拆解}
+  - {name: 门店, type: text}
+  - {name: 日期, type: text, note: 抓取日期 YYYY-MM-DD}
+  - {name: 确认状态, type: select, options: [已确认, 待确认], default: 待确认}
+  - {name: 来源, type: text}
+  - {name: 有效期, type: text}
+  - {name: 负责人, type: text}
+teardown_fields:          # 拆解模板 A2 关键字段（新建库时也建成列；接已有库时可不映射）
+  - 样本ID
+  - 资格
+  - 作者
+  - 发布日期原样
+  - 互动数据
+  - 拆解图片数
+  - 图序观察
+  - 设计结论
+  - 点击机制_推断
+  - 咨询解释
+  - 本品牌迁移
+  - 不可照搬
+  - 查看边界
+  - 标签
+  - 可借鉴点
+  - 图片文件
+  - 图片URL

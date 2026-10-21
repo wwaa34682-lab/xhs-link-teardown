@@ -1,0 +1,13 @@
+# 复制为 kb_local.yaml 后填写。kb_local.yaml 只留在本机，不要上传 GitHub（已在 .gitignore）。
+brand: 本品牌                 # 拆解里「可迁移到<本品牌>」用的名字
+brand_facts: []               # 只能写已核实的事实；没写的一律【待业务确认】
+backend: csv                  # csv | xlsx | feishu
+csv_path: ~/xhs-tools/对标库/对标拆解库.csv
+xlsx_path: ~/xhs-tools/对标库/对标拆解库.xlsx
+feishu:                       # backend=feishu 时填写
+  app_token: ""               # 多维表格链接 /base/<这一段>
+  table_id: ""                # 链接里 ?table=<这一段>
+  base_url: ""                # 例如 https://xxx.feishu.cn/base/<app_token>
+  helper: ""                  # 可选：已有飞书客户端 .py 路径（需提供 api() 与 list_records()）；留空则用环境变量 FEISHU_APP_ID / FEISHU_APP_SECRET
+field_map: {}                 # 标准字段 → 你库里的列名；不写=同名；写 null=不单独成列（并进内容）
+confirmed_mapping: false      # 映射给用户确认过后才改成 true；false 时 write 会拒绝写入
